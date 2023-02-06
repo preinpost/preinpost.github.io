@@ -1,0 +1,14 @@
+[book]
+authors = ["letomok@gmail.com"]
+language = "ko"
+multilingual = false
+src = "src"
+title = "Log"
+
+[output.html]
+additional-css = ["./assets/css/custom.css"]
+no-section-label = true
+preferred-dark-theme = "ayu"
+
+[output.html.fold]
+enable = true
