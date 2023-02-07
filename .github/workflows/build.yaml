@@ -11,7 +11,9 @@ jobs:
       - uses: actions/checkout@master
         with:
           repository: preinpost/mdBook
-          path: ./mdbook
+          path: ${GITHUB_WORKSPACE}/mdbook
+
+      - uses: actions/checkout@v3
 
       - name: check ls 1
         run: ls -al
@@ -22,14 +24,18 @@ jobs:
 
       - name: Run build mdbook
         run: cargo build --release  
-        working-directory: ./mdbook
+        working-directory: ${GITHUB_WORKSPACE}/mdbook
 
       - name: check ls 2
         run: ls -al
 
-      - uses: actions/checkout@v3
+
       
       - name: check ls 3
         run: ls -al
+      
+      - name: cp mdbook
+        run: cp ${GITHUB_WORKSPACE}/mdbook/target/release/mdbook ${GITHUB_WORKSPACE}
 
-      - run: ${GITHUB_WORKSPACE}/mdbook/target/release/mdbook build
+      - name: Run mdbook
+        run: ./mdbook build
