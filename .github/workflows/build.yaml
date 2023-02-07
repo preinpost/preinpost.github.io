@@ -28,7 +28,8 @@ jobs:
         run: ls -al
 
       - uses: actions/checkout@v3
-      - run: ./mdbook/target/release/mdbook build
-
+      
       - name: check ls 3
         run: ls -al
+
+      - run: ${GITHUB_WORKSPACE}/mdbook/target/release/mdbook build
