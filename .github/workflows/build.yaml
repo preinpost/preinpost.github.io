@@ -20,7 +20,8 @@ jobs:
           toolchain: stable
 
       - name: build mdbook
-        run: cargo build --release --project-dir ./mdbook
+        run: cargo build --release  
+        working-directory: ./mdbook
 
       - uses: actions/checkout@v3
       - run: .mdbook/target/release/mdbook build
