@@ -18,11 +18,9 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --release
-        env:
-          working-directory: ./mdbook
+
+      - name: build mdbook
+        run: cargo build --release --project-dir ./mdbook
+
       - uses: actions/checkout@v3
       - run: .mdbook/target/release/mdbook build
