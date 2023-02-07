@@ -8,10 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
         with:
-          name: preinpost/mdBook
-          ref: refs/heads/master
+          repository: preinpost/mdBook
 
       - run: ls -al
       
