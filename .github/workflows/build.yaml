@@ -12,6 +12,9 @@ jobs:
         with:
           name: preinpost/mdBook
           ref: refs/heads/master
+
+      - run: ls -al
+      
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
@@ -19,6 +22,8 @@ jobs:
         with:
           command: build
           args: --release
+        env:
+          working-directory: ./work/preinpost.github.io
 
       - uses: actions/checkout@v3
       - run: ./target/release/mdbook build
