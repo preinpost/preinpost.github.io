@@ -9,4 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: sh ./build.sh
+        with:
+          name: preinpost/mdBook
+          ref: refs/heads/master
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release
+
+      - uses: actions/checkout@v3
+      - run: ./target/release/mdbook build
