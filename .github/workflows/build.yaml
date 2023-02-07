@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@master
         with:
           repository: preinpost/mdBook
+          path: ./mdbook
 
       - run: ls -al
       
@@ -22,7 +23,6 @@ jobs:
           command: build
           args: --release
         env:
-          working-directory: ./work/preinpost.github.io
-
+          working-directory: ./mdbook
       - uses: actions/checkout@v3
-      - run: ./target/release/mdbook build
+      - run: .mdbook/target/release/mdbook build
