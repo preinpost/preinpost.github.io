@@ -41,4 +41,5 @@ jobs:
         run: cp ./mdbook/target/release/mdbook ./blog
 
       - name: Run mdbook
-        run: ./blog/mdbook build
+        run: ./mdbook build
+        working-directory: ./blog
