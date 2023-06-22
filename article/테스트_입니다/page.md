@@ -1,3 +1,6 @@
+테스트 입니다
+
+
 # Title1
 
 ## Title2
@@ -9,10 +12,6 @@
 ##### Title4
 
 ###### Title5
-
-![lion1](https://preinpost.github.io/article/1/lion.jpeg)
-![lion2](https://preinpost.github.io/article/1/lion.jpeg)
-![lion3](https://preinpost.github.io/article/1/lion.jpeg)
 
 ```java
 public class Hello {
